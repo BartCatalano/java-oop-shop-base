@@ -5,12 +5,12 @@ import java.math.RoundingMode;
 import java.util.Random;
 
 public class Prodotto {
-public int codice;
-public String nome;
-public String descrizione;
-public BigDecimal prezzo;
-public BigDecimal iva;
-public BigDecimal prezzoFinito;
+private BigDecimal prezzo;
+private BigDecimal iva;
+private int codice;
+private String nome;
+private String descrizione;
+
  
 
  public Prodotto( String nome, String descrizione, BigDecimal prezzo, BigDecimal iva){
@@ -26,6 +26,41 @@ public BigDecimal prezzoFinito;
  public BigDecimal getPrezzoBase(){
     return this.prezzo;
  }
+ public void  setPrezzoBase(BigDecimal prezzo){
+      this.prezzo = prezzo;
+   }
+   public BigDecimal getIva(){
+      return this.iva;
+   }
+
+   public void setIva(BigDecimal iva){
+      this.iva = iva;
+   }
+
+   public int getCodice(){
+      return this.codice;
+   }
+
+   public void setCodice(int codice){
+      this.codice = codice;
+   }
+
+   public String getnome(){
+      return this.nome;
+   }
+
+   public void setnome(String nome){
+      this.nome = nome;
+   }
+
+   public String getDescrizione(){
+      return this.descrizione;
+   }
+
+   public void setDescrizione(String Descrizione){
+      this.descrizione = Descrizione;
+   }
+
  public BigDecimal getPrezzoIvato(){
     if(prezzo != null && iva != null){
       return prezzo.add(prezzo.multiply(iva).setScale(2,RoundingMode.DOWN));
